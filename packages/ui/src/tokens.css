@@ -1,0 +1,26 @@
+/*
+ * Innovative Twist Real Estate — design tokens (CLAUDE.md 12.1).
+ * Every app imports this file rather than hard-coding colors, per
+ * CLAUDE.md 12.1's "do not hard-code colors throughout components."
+ */
+:root {
+  --color-primary-blue: #1390d0;
+  --color-secondary-blue: #0a5fa3;
+  --color-white: #ffffff;
+  --color-light-grey: #dedede;
+
+  /* Additional neutrals — CLAUDE.md 12.1 explicitly allows these. */
+  --color-neutral-900: #1f2937;
+  --color-neutral-500: #6b7280;
+
+  /*
+   * NOT YET OFFICIAL. The shared homepage mockups use a dark navy background
+   * and a gold/bronze accent for premium sections (Concierge Savings
+   * Program, Client Advantage). Neither is in CLAUDE.md 12.1. Flagged for a
+   * deliberate brand-color decision before Phase 2 (public website) —
+   * do not treat these as final, and do not reference them from components
+   * until that decision is made.
+   */
+  /* --color-navy-candidate: #0b1d3a; */
+  /* --color-gold-candidate: #c9a24b; */
+}

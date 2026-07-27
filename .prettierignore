@@ -1,0 +1,10 @@
+node_modules
+.next
+dist
+.turbo
+coverage
+pnpm-lock.yaml
+
+# Hand-authored specs, not code — not subject to Prettier's code formatting rules.
+docs/
+CLAUDE.md
