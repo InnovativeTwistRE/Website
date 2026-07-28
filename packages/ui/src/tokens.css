@@ -14,13 +14,14 @@
   --color-neutral-500: #6b7280;
 
   /*
-   * NOT YET OFFICIAL. The shared homepage mockups use a dark navy background
-   * and a gold/bronze accent for premium sections (Concierge Savings
-   * Program, Client Advantage). Neither is in CLAUDE.md 12.1. Flagged for a
-   * deliberate brand-color decision before Phase 2 (public website) —
-   * do not treat these as final, and do not reference them from components
-   * until that decision is made.
+   * NOT YET OFFICIAL BRAND COLOR. CLAUDE.md 12.1 does not list navy — this
+   * is used because the approved homepage design (2026-07-28) depends on it
+   * for dark sections (footer, pull-quote, promo bands). Kept exploratory
+   * and separate from the confirmed tokens above rather than folded into
+   * CLAUDE.md 12.1 — revisit if/when it's formally approved as brand color.
    */
-  /* --color-navy-candidate: #0b1d3a; */
-  /* --color-gold-candidate: #c9a24b; */
+  --color-navy-exploratory: #0b1e3a;
+
+  /* Gold/bronze accent seen in other mockups — not used by the approved
+     homepage, so intentionally left undefined here. */
 }
