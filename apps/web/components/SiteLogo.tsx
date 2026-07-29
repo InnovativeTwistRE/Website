@@ -25,14 +25,12 @@ export function SiteLogo({ className }: { className?: string }) {
 
   if (imageFailed) {
     return (
-      <span className={["block leading-none", className].filter(Boolean).join(" ")}>
-        <span className="block font-serif text-lg text-(--color-neutral-900)">innovative</span>
-        <span className="block font-serif text-xl font-bold tracking-wide text-(--color-primary-blue)">
-          TWIST
-        </span>
-        <span className="block text-[10px] font-medium tracking-[0.2em] text-(--color-neutral-500) uppercase">
-          Real Estate
-        </span>
+      <span
+        className={["block font-serif text-lg text-(--color-primary-blue)", className]
+          .filter(Boolean)
+          .join(" ")}
+      >
+        innovative twist real estate
       </span>
     );
   }

@@ -33,7 +33,7 @@ export function SiteFooter() {
             <p className="text-sm font-semibold uppercase">Contact</p>
             <ul className="mt-4 space-y-2 text-sm text-white/80">
               <li>
-                <a href="tel:7571234567">(757) 123-4567</a>
+                <a href="tel:7577548512">757.754.8512</a>
               </li>
               <li>
                 <a href="mailto:hello@innovativetwistrealestate.com">
