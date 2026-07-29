@@ -1,16 +1,72 @@
 import Link from "next/link";
-import { Button, Eyebrow, PlaceholderImage } from "@innovative-twist/ui";
+import { Button, Eyebrow, PlaceholderImage, StockPhoto } from "@innovative-twist/ui";
 
+/**
+ * Unsplash License (free to use, no attribution required) — interim stand-
+ * ins per 2026-07-28 direction, until real photography/AI-generated images
+ * replace them. Swap the `image` value for a local asset path when ready.
+ */
 const OPPORTUNITIES = [
-  { label: "Buy", href: "/buyers", image: "Buyers — home exterior" },
-  { label: "Sell", href: "/sellers", image: "Sellers — staged interior" },
-  { label: "Rent", href: "/rentals", image: "Rentals — home exterior" },
-  { label: "Landlord", href: "/property-wealth-management", image: "Landlord — property exterior" },
-  { label: "Investor", href: "/build-wealth", image: "Investor — property exterior" },
-  { label: "New Construction", href: "/buyers/new-construction", image: "New construction build" },
-  { label: "Military", href: "/buyers/military", image: "Military family" },
-  { label: "55+ Living", href: "/communities/55-plus", image: "55+ community" },
+  {
+    label: "Buy",
+    href: "/buyers",
+    alt: "Suburban home exterior",
+    image:
+      "https://images.unsplash.com/photo-1768768736208-b8f0e498e174?fm=jpg&q=80&w=800&fit=crop",
+  },
+  {
+    label: "Sell",
+    href: "/sellers",
+    alt: "Staged modern living room",
+    image:
+      "https://images.unsplash.com/photo-1600494448850-6013c64ba722?fm=jpg&q=80&w=800&fit=crop",
+  },
+  {
+    label: "Rent",
+    href: "/rentals",
+    alt: "Home exterior for rent",
+    image:
+      "https://images.unsplash.com/photo-1773427668146-d13b76d647fa?fm=jpg&q=80&w=800&fit=crop",
+  },
+  {
+    label: "Landlord",
+    href: "/property-wealth-management",
+    alt: "Apartment building exterior",
+    image:
+      "https://images.unsplash.com/photo-1579632652768-6cb9dcf85912?fm=jpg&q=80&w=800&fit=crop",
+  },
+  {
+    label: "Investor",
+    href: "/build-wealth",
+    alt: "Investment duplex property",
+    image:
+      "https://images.unsplash.com/photo-1764344885138-f9e70be45aec?fm=jpg&q=80&w=800&fit=crop",
+  },
+  {
+    label: "New Construction",
+    href: "/buyers/new-construction",
+    alt: "New construction home framing",
+    image:
+      "https://images.unsplash.com/photo-1704742950992-9815a104820c?fm=jpg&q=80&w=800&fit=crop",
+  },
+  {
+    label: "Military",
+    href: "/buyers/military",
+    alt: "Family moving into a new home",
+    image:
+      "https://images.unsplash.com/photo-1714647211860-cff4bccb505a?fm=jpg&q=80&w=800&fit=crop",
+  },
+  {
+    label: "55+ Living",
+    href: "/communities/55-plus",
+    alt: "Active senior couple outdoors",
+    image:
+      "https://images.unsplash.com/photo-1774537813422-90ad47fadc08?fm=jpg&q=80&w=800&fit=crop",
+  },
 ];
+
+const OCEANFRONT_BACKGROUND =
+  "https://images.unsplash.com/photo-1768760534929-c2fad3d321ba?fm=jpg&q=80&w=2400&fit=crop";
 
 const WHY_ITEMS = [
   {
@@ -128,7 +184,7 @@ export default function Home() {
           <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
             {OPPORTUNITIES.map((item) => (
               <Link key={item.href} href={item.href} className="group text-left">
-                <PlaceholderImage label={item.image} aspect="square" />
+                <StockPhoto src={item.image} alt={item.alt} aspect="square" />
                 <p className="mt-2 text-sm font-semibold text-(--color-neutral-900) group-hover:text-(--color-primary-blue)">
                   {item.label} →
                 </p>
@@ -139,8 +195,15 @@ export default function Home() {
       </section>
 
       {/* Search */}
-      <section className="bg-(--color-navy-exploratory) py-10">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-(--color-navy-exploratory) py-10">
+        <StockPhoto
+          src={OCEANFRONT_BACKGROUND}
+          alt="Virginia Beach oceanfront"
+          aspect="wide"
+          className="absolute inset-0 h-full w-full rounded-none"
+        />
+        <div className="absolute inset-0 bg-(--color-navy-exploratory)/80" />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-lg font-semibold text-white uppercase">Search Properties</h2>
           <div className="mt-4 flex flex-wrap gap-2 text-sm">
             {["Buy", "Rent", "Luxury", "Investment", "New Construction"].map((tab, i) => (
