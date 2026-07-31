@@ -30,9 +30,28 @@ Save it at the exact path listed below (create folders as needed under `apps/web
 | 14 | Client Testimonial 2 | Client story video thumbnail | 800×800px | 1:1 (square) | |
 | 15 | Client Testimonial 3 | Client story video thumbnail | 800×800px | 1:1 (square) | |
 
+## Buy page (`apps/web/app/buy/page.tsx`) — built 2026-07-30
+
+| # | Section | What it is | Recommended size | Aspect | Notes |
+|---|---|---|---|---|---|
+| 16 | Hero | Joshua handing over keys to a family in their new home | 2400×1150px | 21:9 (wide) | Same treatment as the homepage hero |
+| 17 | Why Buyers Choose Us — Education | Client consultation, reviewing options together | 800×800px | 1:1 (square) | |
+| 18 | Why Buyers Choose Us — Negotiation | Handshake, offer accepted | 800×800px | 1:1 (square) | |
+| 19 | Why Buyers Choose Us — Relationships | Family moving into new home | 800×800px | 1:1 (square) | |
+| 20 | Featured Communities — Virginia Beach | Skyline or streetscape | 900×1200px | 3:4 (portrait) | |
+| 21 | Featured Communities — Chesapeake | Skyline or streetscape | 900×1200px | 3:4 (portrait) | |
+| 22 | Featured Communities — Norfolk | Skyline or streetscape | 900×1200px | 3:4 (portrait) | |
+| 23 | Featured Communities — Suffolk | Skyline or streetscape | 900×1200px | 3:4 (portrait) | |
+| 24 | Trusted Partners — Mortgage & Lending | Partner company logo | 600×300px | ~2:1 (wide) | **Needs the actual company name too, not just a logo file** — this is a real vendor relationship (confirmed 2026-07-30), not a placeholder concept |
+| 25 | Trusted Partners — Closing Attorney / Title | Partner company logo | 600×300px | ~2:1 (wide) | Same — real name + logo needed |
+| 26 | Trusted Partners — Home Inspections | Partner company logo | 600×300px | ~2:1 (wide) | Same — real name + logo needed |
+| 27–29 | Success Stories (×3) | Client story video thumbnails | 800×800px each | 1:1 (square) | Confirmed placeholder for now (2026-07-30) — real testimonials come later |
+| 30 | Final CTA | Joshua handing keys to buyers outside their new home | 2400×900px | ~8:3 (wide banner) | |
+
 ## Revision History
 
 | Date | Summary |
 |---|---|
 | 2026-07-28 | Initial manifest — homepage placeholders. |
 | 2026-07-29 | Reverted a brief stock-photo experiment (#3–11) back to placeholders — no functional change to this manifest, sizes unchanged. |
+| 2026-07-30 | Added Buy page placeholders (#16–30). Items #24–26 need real partner names in addition to logo files — confirmed real vendor relationships (mortgage, closing attorneys, inspections), not placeholder concepts like the rest of this list. |
