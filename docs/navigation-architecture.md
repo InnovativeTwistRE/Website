@@ -106,10 +106,10 @@ Not every page belongs in the primary navigation. Many pages exist only as SEO/c
 ## UX Requirements
 
 ### Desktop
-- Sticky navigation
-- Transparent over the hero section; solid white background after scrolling
+- Sticky navigation, solid white background at all times (no transparent-over-hero — that variant was built 2026-07-30 and dropped the same day; it only reads well over a real dark hero photo, and needs special-casing on every page that lacks a full-bleed hero, so a consistent solid header won out)
+- Mega menus appear only on hover/focus of their primary item and close when the cursor leaves the header — not visible by default, not "sticky open"
 - Smooth hover transitions (respect `prefers-reduced-motion`, per CLAUDE.md 11.5/12.4)
-- Large mega menus, single level, no nested fly-outs
+- Large mega menus, single level, no nested fly-outs, rendered as an overlay that does not push page content down
 
 ### Mobile
 - Full-screen slide-out menu
@@ -146,3 +146,4 @@ The prior 12-item flat nav (`CLAUDE.md` §7's original list) mapped page-for-pag
 | Version | Date | Summary |
 |---|---|---|
 | 1.0 | 2026-07-30 | Initial navigation architecture — supersedes the flat 12-item nav from 2026-07-28. |
+| 1.1 | 2026-07-30 | Dropped transparent-over-hero — header is solid white at all times. Fixed a real bug in the first build where the mega menu could stay visibly open far longer than intended (it was rendered in normal document flow and its hover-close boundary was too broad); it's now an absolutely-positioned overlay tied to the nav row only. |
