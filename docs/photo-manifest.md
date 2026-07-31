@@ -48,6 +48,28 @@ Save it at the exact path listed below (create folders as needed under `apps/web
 | 27–29 | Success Stories (×3) | Client story video thumbnails | 800×800px each | 1:1 (square) | Confirmed placeholder for now (2026-07-30) — real testimonials come later |
 | 30 | Final CTA | Joshua handing keys to buyers outside their new home | 2400×900px | ~8:3 (wide banner) | |
 
+## About page (`apps/web/app/about/page.tsx`) — built 2026-07-30
+
+| # | Section | What it is | Recommended size | Aspect | Notes |
+|---|---|---|---|---|---|
+| 31 | Hero | Joshua on the waterfront boardwalk at dusk | 2400×1150px | 21:9 (wide) | |
+| 32 | Meet Joshua | Portrait — Joshua in office, blazer + cap | 1200×1600px | 3:4 (portrait) | |
+| 33 | Marketing showcase | For Sale sign, IT branded | 800×800px | 1:1 (square) | |
+| 34 | Marketing showcase | Built in the 757 — cover art | 800×800px | 1:1 (square) | Can reuse #12 |
+| 35 | Marketing showcase | Drone / camera equipment in use | 800×800px | 1:1 (square) | |
+| 36 | Marketing showcase | Tablet with IT branding | 800×800px | 1:1 (square) | |
+| 37 | Numbers That Matter | Hampton Roads skyline | 1600×900px | 16:9 | |
+| 38–43 | Beyond Real Estate (×6) | Husband, Father, Navy Veteran, Business Owner, Content Creator, Community Advocate | 800×800px each | 1:1 (square) | Personal photos |
+| 44 | Built in the 757 | Latest episode — podcast player | 800×800px | 1:1 (square) | |
+| 45 | Built in the 757 | Magazine cover | 800×800px | 1:1 (square) | Can reuse #12/#34 |
+| 46 | Built in the 757 | Joshua recording — behind the scenes | 800×800px | 1:1 (square) | |
+| 47 | Built in the 757 | Hampton Roads aerial | 800×800px | 1:1 (square) | |
+| 48 | Community | Hampton Roads coastline aerial | 1600×900px | 16:9 | |
+| 49–51 | What Clients Are Saying (×3) | Client story video thumbnails | 800×800px each | 1:1 (square) | Placeholder — real testimonials come later |
+| 52 | Final CTA | Joshua with a family, casual conversation | 2400×900px | ~8:3 (wide banner) | |
+
+Trusted-partner logos for this page reuse the same real companies as the Buy page's Trusted Partners section (#24–26) — see that entry for the logo-file request. This page currently shows the names as plain text, no logo graphics yet.
+
 ## Revision History
 
 | Date | Summary |
@@ -55,3 +77,4 @@ Save it at the exact path listed below (create folders as needed under `apps/web
 | 2026-07-28 | Initial manifest — homepage placeholders. |
 | 2026-07-29 | Reverted a brief stock-photo experiment (#3–11) back to placeholders — no functional change to this manifest, sizes unchanged. |
 | 2026-07-30 | Added Buy page placeholders (#16–30). Items #24–26 need real partner names in addition to logo files — confirmed real vendor relationships (mortgage, closing attorneys, inspections), not placeholder concepts like the rest of this list. |
+| 2026-07-30 | Added About page placeholders (#31–52). |

@@ -86,7 +86,7 @@ export const PRIMARY_NAV: PrimaryNavItem[] = [
     label: "About",
     href: "/about",
     items: [
-      { label: "Joshua Alvelo", href: "/about/joshua-alvelo" },
+      { label: "Joshua Alvelo", href: "/about" },
       { label: "Meet the Team", href: "/about/team" },
       { label: "Built in the 757", href: "/built-in-the-757" },
       { label: "Testimonials", href: "/about/testimonials" },
