@@ -1,104 +1,139 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@innovative-twist/ui";
 import { SiteLogo } from "./SiteLogo";
+import { MegaMenuPanel } from "./nav/MegaMenuPanel";
+import { MobileNav } from "./nav/MobileNav";
+import { MobileStickyBar } from "./nav/MobileStickyBar";
+import type { PrimaryNavMega } from "./nav/navigation-data";
+import { PRIMARY_NAV, UTILITY_NAV, PHONE_DISPLAY, PHONE_HREF } from "./nav/navigation-data";
+
+function isMegaItem(item: (typeof PRIMARY_NAV)[number]): item is PrimaryNavMega {
+  return item.type === "mega";
+}
 
 /**
- * Canonical public page list, per CLAUDE.md 7 — confirmed 2026-07-28 as the
- * real page set (not the shorter list shown in early homepage mockups).
- * Homepage itself isn't a nav item; the logo links there.
- *
- * `label` is the full canonical name (used in the mobile menu, where a
- * vertical list has room). `navLabel` is a shortened display form for the
- * cramped horizontal desktop bar — flagged 2026-07-28 as looking too
- * crowded with the full names. Trademark symbols are dropped from nav text
- * only; they stay on the actual page headings/copy.
+ * Per docs/navigation-architecture.md: 7-item primary nav (max), mega
+ * menus (not long dropdowns), sticky + transparent-over-hero fading to
+ * solid white on scroll, utility nav kept out of the primary row, mobile
+ * full-screen slide-out with a persistent sticky call/schedule bar.
  */
-const NAV_ITEMS = [
-  { label: "About", navLabel: "About", href: "/about" },
-  { label: "Buyers", navLabel: "Buyers", href: "/buyers" },
-  { label: "Sellers", navLabel: "Sellers", href: "/sellers" },
-  {
-    label: "Property Wealth Management™",
-    navLabel: "Property Management",
-    href: "/property-wealth-management",
-  },
-  { label: "Rentals", navLabel: "Rentals", href: "/rentals" },
-  { label: "Build Wealth", navLabel: "Build Wealth", href: "/build-wealth" },
-  { label: "Concierge Services", navLabel: "Concierge", href: "/concierge" },
-  { label: "Knowledge Center™", navLabel: "Knowledge Center", href: "/knowledge-center" },
-  { label: "Communities", navLabel: "Communities", href: "/communities" },
-  { label: "Built in the 757™", navLabel: "Built in the 757", href: "/built-in-the-757" },
-  { label: "Resources", navLabel: "Resources", href: "/resources" },
-  { label: "Contact", navLabel: "Contact", href: "/contact" },
-];
-
 export function SiteHeader() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+
+  useEffect(() => {
+    function onScroll() {
+      setScrolled(window.scrollY > 8);
+    }
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") setOpenMenu(null);
+    }
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, []);
+
+  // Force the solid/white state whenever a mega menu is open, even if the
+  // page hasn't scrolled — a transparent header with a white panel open
+  // underneath it reads as broken, not premium.
+  const solid = scrolled || openMenu !== null;
+  const activeMegaItem = PRIMARY_NAV.filter(isMegaItem).find((item) => item.label === openMenu);
+
+  const textClass = solid
+    ? "text-(--color-neutral-900) hover:text-(--color-primary-blue)"
+    : "text-white hover:text-white/70";
 
   return (
-    <header className="border-b border-(--color-light-grey) bg-white">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="/" className="shrink-0">
-          <SiteLogo />
-        </Link>
-
-        <nav className="hidden flex-1 flex-wrap items-center justify-center gap-x-5 gap-y-1 lg:flex">
-          {NAV_ITEMS.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-sm whitespace-nowrap text-(--color-neutral-900) hover:text-(--color-primary-blue)"
-            >
-              {item.navLabel}
-            </Link>
-          ))}
-        </nav>
-
-        <div className="hidden shrink-0 items-center gap-4 lg:flex">
-          <a href="tel:7577548512" className="text-sm font-medium text-(--color-neutral-900)">
-            757.754.8512
+    <>
+      <header
+        className={[
+          "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
+          solid
+            ? "border-b border-(--color-light-grey) bg-white shadow-sm"
+            : "border-b border-transparent bg-transparent",
+        ].join(" ")}
+        onMouseLeave={() => setOpenMenu(null)}
+      >
+        {/* Utility strip */}
+        <div
+          className={[
+            "mx-auto hidden max-w-7xl items-center justify-end gap-5 px-4 py-1.5 text-xs sm:px-6 lg:flex lg:px-8",
+            solid ? "text-(--color-neutral-500)" : "text-white/80",
+          ].join(" ")}
+        >
+          {UTILITY_NAV.map((link) =>
+            link.comingSoon ? null : (
+              <Link key={link.label} href={link.href ?? "#"} className="hover:underline">
+                {link.label}
+              </Link>
+            ),
+          )}
+          <a href={PHONE_HREF} className="font-medium hover:underline">
+            {PHONE_DISPLAY}
           </a>
-          <Button className="text-xs">Schedule a Consultation</Button>
         </div>
 
-        <button
-          type="button"
-          className="text-(--color-neutral-900) lg:hidden"
-          aria-expanded={menuOpen}
-          aria-controls="mobile-nav"
-          onClick={() => setMenuOpen((open) => !open)}
-        >
-          <span className="sr-only">Toggle menu</span>
-          {menuOpen ? "Close" : "Menu"}
-        </button>
-      </div>
+        {/* Main row */}
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+          <Link href="/" className="shrink-0">
+            <SiteLogo variant={solid ? "color" : "white"} />
+          </Link>
 
-      {menuOpen ? (
-        <nav id="mobile-nav" className="border-t border-(--color-light-grey) px-4 py-4 lg:hidden">
-          <ul className="flex flex-col gap-3">
-            {NAV_ITEMS.map((item) => (
-              <li key={item.href}>
+          <nav className="hidden items-center gap-6 lg:flex">
+            {PRIMARY_NAV.map((item) =>
+              item.type === "link" ? (
                 <Link
+                  key={item.href}
                   href={item.href}
-                  className="text-sm font-medium text-(--color-neutral-900)"
-                  onClick={() => setMenuOpen(false)}
+                  className={`text-sm font-medium ${textClass}`}
                 >
                   {item.label}
                 </Link>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-4 flex flex-col gap-3">
-            <a href="tel:7577548512" className="text-sm font-medium text-(--color-neutral-900)">
-              757.754.8512
-            </a>
-            <Button>Schedule a Consultation</Button>
+              ) : (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className={`text-sm font-medium ${textClass}`}
+                  aria-expanded={openMenu === item.label}
+                  onMouseEnter={() => setOpenMenu(item.label)}
+                  onFocus={() => setOpenMenu(item.label)}
+                >
+                  {item.label}
+                </Link>
+              ),
+            )}
+          </nav>
+
+          <div className="hidden shrink-0 lg:block">
+            <Button variant={solid ? "primary" : "onDark"} className="text-xs">
+              Schedule Consultation
+            </Button>
           </div>
-        </nav>
-      ) : null}
-    </header>
+
+          <button
+            type="button"
+            className={`text-sm font-medium lg:hidden ${textClass}`}
+            onClick={() => setMobileNavOpen(true)}
+          >
+            Menu
+          </button>
+        </div>
+
+        {/* Mega menu panel — one level, no nested fly-outs */}
+        {activeMegaItem ? <MegaMenuPanel item={activeMegaItem} /> : null}
+      </header>
+
+      <MobileNav open={mobileNavOpen} onClose={() => setMobileNavOpen(false)} />
+      {!mobileNavOpen ? <MobileStickyBar /> : null}
+    </>
   );
 }

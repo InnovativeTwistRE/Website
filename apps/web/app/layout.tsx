@@ -14,7 +14,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <body>
         <SiteHeader />
-        {children}
+        {/*
+          SiteHeader is fixed/out-of-flow (transparent over the hero, per
+          docs/navigation-architecture.md), so no top padding here — pages
+          with a full-bleed hero should render behind it intentionally.
+          Bottom padding on mobile only, for the fixed MobileStickyBar.
+        */}
+        <div className="pb-20 lg:pb-0">{children}</div>
         <SiteFooter />
       </body>
     </html>

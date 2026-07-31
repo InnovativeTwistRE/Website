@@ -13,4 +13,17 @@ describe("Button", () => {
     const el = screen.getByRole("button", { name: "Browse Trusted Partners" });
     expect(el.className).toContain("border");
   });
+
+  it("applies the onDark variant class", () => {
+    render(<Button variant="onDark">Schedule a Consultation</Button>);
+    const el = screen.getByRole("button", { name: "Schedule a Consultation" });
+    expect(el.className).toContain("border-white");
+  });
+
+  it("renders as a link when href is given, not a button", () => {
+    render(<Button href="tel:7577548512">Call</Button>);
+    const el = screen.getByRole("link", { name: "Call" });
+    expect(el.tagName).toBe("A");
+    expect(el.getAttribute("href")).toBe("tel:7577548512");
+  });
 });

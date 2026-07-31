@@ -393,7 +393,11 @@ Has full owner-level access, reporting access, CRM visibility, and lead-intent v
 
 # 7. Public Website Structure
 
-The public website includes:
+## 7.1 Primary Navigation (locked, maximum 7 items)
+
+Primary navigation is capped at 7 items, single row, no wrapping: Home, Buy, Sell, Services, Resources, About, Contact. Buy, Sell, Services, Resources, and About use mega menus rather than long dropdown lists; Contact and Home are direct links. Full mega-menu contents, the utility navigation (Owner Portal, Tenant Portal, Client Login, etc. — never in the primary nav), the IA rules for landing/campaign pages, and the desktop/mobile UX requirements are documented in `docs/navigation-architecture.md`, which is canonical for navigation. This supersedes the flat 12-item nav originally listed here — no pages were dropped, only reorganized under the mega menus (see the mapping table in that doc).
+
+All the underlying pages below still exist; navigation architecture governs how they're *exposed*, not whether they exist:
 
 - Homepage
 - About

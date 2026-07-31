@@ -1,24 +1,39 @@
-import type { ButtonHTMLAttributes } from "react";
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary";
+type Variant = "primary" | "secondary" | "onDark";
+
+interface CommonProps {
+  variant?: Variant;
+  className?: string;
 }
+
+export type ButtonProps =
+  | (CommonProps & ButtonHTMLAttributes<HTMLButtonElement> & { href?: undefined })
+  | (CommonProps & AnchorHTMLAttributes<HTMLAnchorElement> & { href: string });
 
 const base =
   "inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors";
 
-const variants: Record<NonNullable<ButtonProps["variant"]>, string> = {
+const variants: Record<Variant, string> = {
   primary: "bg-(--color-primary-blue) text-white hover:bg-(--color-secondary-blue)",
   secondary: "bg-white text-(--color-primary-blue) border border-(--color-primary-blue)",
+  // For CTAs placed over a photo/dark background — e.g. the header's
+  // transparent state over the hero. Not for use on white backgrounds.
+  onDark:
+    "border border-white text-white bg-transparent hover:bg-white hover:text-(--color-primary-blue)",
 };
 
 /**
- * First real component in the design system — exists to prove the
- * react + tailwind + vitest pipeline builds end to end, not as a finished
- * component library. Real components (§12.3 of CLAUDE.md) are built out
- * during the public website phase.
+ * Design system Button — used across the public site's headers, heroes,
+ * and CTAs (CLAUDE.md §12.3). Pass `href` to render as a link styled like
+ * a button (e.g. a "Call" CTA) instead of a real <button>.
  */
-export function Button({ variant = "primary", className, ...props }: ButtonProps) {
+export function Button({ variant = "primary", className, href, ...props }: ButtonProps) {
   const classes = [base, variants[variant], className].filter(Boolean).join(" ");
-  return <button className={classes} {...props} />;
+  if (href !== undefined) {
+    return (
+      <a href={href} className={classes} {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)} />
+    );
+  }
+  return <button className={classes} {...(props as ButtonHTMLAttributes<HTMLButtonElement>)} />;
 }

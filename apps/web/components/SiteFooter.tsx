@@ -1,24 +1,25 @@
 import Link from "next/link";
+import { PHONE_DISPLAY, PHONE_HREF } from "./nav/navigation-data";
 
-const QUICK_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Buyers", href: "/buyers" },
-  { label: "Sellers", href: "/sellers" },
-];
-
-const SERVICE_LINKS = [
-  { label: "Property Wealth Management™", href: "/property-wealth-management" },
-  { label: "Rentals", href: "/rentals" },
-  { label: "Build Wealth", href: "/build-wealth" },
-  { label: "Concierge Services", href: "/concierge" },
-];
-
-const RESOURCE_LINKS = [
-  { label: "Knowledge Center™", href: "/knowledge-center" },
+const BUY_LINKS = [
+  { label: "Home Buying", href: "/buy" },
+  { label: "Search Homes", href: "/search" },
   { label: "Communities", href: "/communities" },
-  { label: "Built in the 757™", href: "/built-in-the-757" },
-  { label: "Resources", href: "/resources" },
+  { label: "Featured Listings", href: "/buy/featured-listings" },
+];
+
+const SELL_LINKS = [
+  { label: "Selling Process", href: "/sell" },
+  { label: "Home Valuation", href: "/sell/home-valuation" },
+  { label: "Concierge Services", href: "/concierge" },
+  { label: "Success Stories", href: "/sell/success-stories" },
+];
+
+const SERVICES_LINKS = [
+  { label: "Property Management", href: "/services/property-management" },
+  { label: "Rentals", href: "/rentals" },
+  { label: "Investors", href: "/services/investors" },
+  { label: "Homeowner Services", href: "/services/homeowner-services" },
 ];
 
 export function SiteFooter() {
@@ -26,14 +27,14 @@ export function SiteFooter() {
     <footer className="bg-(--color-navy-exploratory) text-white">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
-          <FooterColumn title="Quick Links" links={QUICK_LINKS} />
-          <FooterColumn title="Services" links={SERVICE_LINKS} />
-          <FooterColumn title="Resources" links={RESOURCE_LINKS} />
+          <FooterColumn title="Buy" links={BUY_LINKS} />
+          <FooterColumn title="Sell" links={SELL_LINKS} />
+          <FooterColumn title="Services" links={SERVICES_LINKS} />
           <div>
             <p className="text-sm font-semibold uppercase">Contact</p>
             <ul className="mt-4 space-y-2 text-sm text-white/80">
               <li>
-                <a href="tel:7577548512">757.754.8512</a>
+                <a href={PHONE_HREF}>{PHONE_DISPLAY}</a>
               </li>
               <li>
                 <a href="mailto:hello@innovativetwistrealestate.com">
