@@ -258,7 +258,7 @@ export default function PropertyManagementPage() {
             <h2 className="mt-2 text-3xl font-bold text-(--color-neutral-900)">
               Property Wealth Management™
             </h2>
-            <p className="mt-2 text-sm font-semibold text-(--color-secondary-blue)">
+            <p className="mt-2 text-sm font-semibold text-(--color-gold-deep)">
               Most Companies Manage Properties. We Help Build Wealth.
             </p>
             <p className="mt-3 text-sm text-(--color-neutral-500)">
@@ -301,7 +301,7 @@ export default function PropertyManagementPage() {
                 key={item.step}
                 className="rounded-md border border-white/15 bg-white/5 p-4 text-center"
               >
-                <div className="mx-auto flex h-9 w-9 items-center justify-center rounded-full border-2 border-(--color-primary-blue) text-sm font-bold text-white">
+                <div className="mx-auto flex h-9 w-9 items-center justify-center rounded-full border-2 border-(--color-gold) text-sm font-bold text-(--color-gold)">
                   {item.step}
                 </div>
                 <p className="mt-2 text-sm font-semibold text-white">{item.title}</p>
@@ -356,7 +356,7 @@ export default function PropertyManagementPage() {
           <div className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
             {WHY_OWNERS.map((item) => (
               <div key={item.title} className="text-center">
-                <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-white/30 text-white">
+                <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-(--color-gold)/40 text-(--color-gold)">
                   <item.icon className="h-6 w-6" />
                 </span>
                 <p className="mt-3 text-sm font-semibold text-white">{item.title}</p>

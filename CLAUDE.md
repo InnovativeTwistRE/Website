@@ -775,6 +775,24 @@ Additional neutrals may be introduced through design tokens.
 
 Do not hard-code colors throughout components.
 
+### Gold accent — scoped, not site-wide
+
+Approved 2026-07-31 as a second accent color, reserved for Property Wealth Management™ and other
+premium, investor-tier content (PropertyOS™/InvestorOS™) — not for the general public site (Buy,
+Sell, About, Homepage stay on the core blue palette above). Rationale: Property Wealth Management
+is positioned as a distinct, higher tier of service — building long-term wealth for owners, not
+just collecting rent — and should read visually as more premium than the rest of the site.
+
+Two shades, defined in `packages/ui/src/tokens.css`, same reasoning as primary/secondary blue:
+
+- Gold `#C9A356` — 7.02:1 contrast on navy. Use on navy backgrounds, for icons, borders, and large
+  text. Do not use on white/light backgrounds — it fails even the 3:1 non-text threshold there.
+- Gold Deep `#8F6E1A` — 4.76:1 contrast on white. Use for small/normal text on white/light
+  backgrounds. On navy it only reaches 3.50:1 — large text/icons only there, not small body text.
+
+Before extending gold to any other page or system, confirm the scope with Joshua first — this is a
+deliberate exception to a single-accent palette, not a general design-system expansion.
+
 ## 12.2 Layout
 
 Use:

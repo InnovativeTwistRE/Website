@@ -22,6 +22,18 @@
    */
   --color-navy-exploratory: #0b1e3a;
 
-  /* Gold/bronze accent seen in other mockups — not used by the approved
-     homepage, so intentionally left undefined here. */
+  /*
+   * Gold accent — approved 2026-07-31, scoped to Property Wealth
+   * Management™ / premium investor-tier content only (see CLAUDE.md
+   * 12.1), not a site-wide addition. Two shades, same reasoning as
+   * primary-blue/secondary-blue:
+   * - --color-gold: 7.02:1 on navy — use on navy backgrounds, for
+   *   icons, borders, and large text. Fails even the 3:1 non-text
+   *   threshold on white (2.37:1) — never use on white/light.
+   * - --color-gold-deep: 4.76:1 on white — use for small/normal text
+   *   on white/light backgrounds. Only 3.50:1 on navy — large text/
+   *   icons only there, not small body text.
+   */
+  --color-gold: #c9a356;
+  --color-gold-deep: #8f6e1a;
 }
