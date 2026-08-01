@@ -223,3 +223,63 @@ export function MessageIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function DroneIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <rect x="9" y="9" width="6" height="6" rx="1.5" />
+      <circle cx="5" cy="5" r="2" />
+      <circle cx="19" cy="5" r="2" />
+      <circle cx="5" cy="19" r="2" />
+      <circle cx="19" cy="19" r="2" />
+      <path d="M6.4 6.4 9.5 9.5M17.6 6.4 14.5 9.5M6.4 17.6 9.5 14.5M17.6 17.6 14.5 14.5" />
+    </svg>
+  );
+}
+
+export function RocketIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M12 2c3 2 4.5 5.5 4.5 9 0 2-.5 3.5-1.5 5l-3-1-3 1c-1-1.5-1.5-3-1.5-5 0-3.5 1.5-7 4.5-9Z" />
+      <circle cx="12" cy="9.5" r="1.5" />
+      <path d="M9 15.5 7 20l3-1.5M15 15.5l2 4.5-3-1.5" />
+    </svg>
+  );
+}
+
+export function WrenchIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2-2 2.6-2.6Z" />
+    </svg>
+  );
+}
+
+export function SofaIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M5 11V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3" />
+      <path d="M3 12.5A1.5 1.5 0 0 1 4.5 11h15A1.5 1.5 0 0 1 21 12.5V17a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4.5Z" />
+      <path d="M5 18v2M19 18v2" />
+    </svg>
+  );
+}
+
+export function EyeIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12Z" />
+      <circle cx="12" cy="12" r="3" />
+    </svg>
+  );
+}
+
+export function TargetIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <circle cx="12" cy="12" r="8.5" />
+      <circle cx="12" cy="12" r="5" />
+      <circle cx="12" cy="12" r="1.5" />
+    </svg>
+  );
+}

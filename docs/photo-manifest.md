@@ -70,6 +70,22 @@ Save it at the exact path listed below (create folders as needed under `apps/web
 
 Trusted-partner logos for this page reuse the same real companies as the Buy page's Trusted Partners section (#24–26) — see that entry for the logo-file request. This page currently shows the names as plain text, no logo graphics yet.
 
+## Sell page (`apps/web/app/sell/page.tsx`) — built 2026-07-31
+
+| # | Section | What it is | Recommended size | Aspect | Notes |
+|---|---|---|---|---|---|
+| 53 | Hero | Joshua greeting sellers outside their home at twilight | 2400×1150px | 21:9 (wide) | Same treatment as the Buy/homepage hero |
+| 54 | Marketing Campaigns | Professional photography — twilight exterior | 1200×675px | 16:9 | |
+| 55 | Marketing Campaigns | Drone photography — aerial property view | 1200×675px | 16:9 | |
+| 56 | Marketing Campaigns | Twilight photography — dusk exterior | 1200×675px | 16:9 | |
+| 57 | Marketing Campaigns | Social media campaigns — device mockups | 1200×675px | 16:9 | |
+| 58 | Marketing Campaigns | Print marketing — brochure and postcard | 1200×675px | 16:9 | |
+| 59 | Marketing Campaigns | Magazine feature — Built in the 757 | 1200×675px | 16:9 | Can reuse #12/#34/#45 |
+| 60 | Marketing Campaigns | Open house experience — welcoming guests | 2400×675px | ~4:1 (wide) | Full-width bottom tile in the grid |
+| 61 | Know Your Home's Value | Home value report preview — UI mockup, not a real property's data | 1200×675px | 16:9 | Deliberately not built with a hardcoded fake address/price — see revision note below |
+| 62 | Client Success Stories | Client story — video testimonial | 1200×675px | 16:9 | Placeholder — real testimonials come later, same as #49–51 |
+| 63 | Final CTA | Joshua with sellers celebrating outside their home | 2400×900px | ~8:3 (wide banner) | |
+
 ## Revision History
 
 | Date | Summary |
@@ -78,3 +94,4 @@ Trusted-partner logos for this page reuse the same real companies as the Buy pag
 | 2026-07-29 | Reverted a brief stock-photo experiment (#3–11) back to placeholders — no functional change to this manifest, sizes unchanged. |
 | 2026-07-30 | Added Buy page placeholders (#16–30). Items #24–26 need real partner names in addition to logo files — confirmed real vendor relationships (mortgage, closing attorneys, inspections), not placeholder concepts like the rest of this list. |
 | 2026-07-30 | Added About page placeholders (#31–52). |
+| 2026-07-31 | Added Sell page placeholders (#53–63). The reference mockup for this page showed a "Home Value Report" widget with a specific fake address and dollar figures, and four "SOLD" cards with specific fake addresses, sale prices, and days-on-market — neither was reproduced with those specifics. Presenting fabricated transaction results as real is a compliance risk for a licensed brokerage, not just a content-accuracy one. The value-report slot (#61) is a UI placeholder instead of a hardcoded example, and the sold-listings section is an honest empty state pending real MLS/CRM data, same pattern as the Buy page's Featured Homes section. |
