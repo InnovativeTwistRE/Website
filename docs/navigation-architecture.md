@@ -12,7 +12,7 @@ Validated against `canonical-reference.md`. No new canonical values (roles, stat
 
 # Navigation Architecture
 
-Version: 1.0
+Version: 1.2
 
 ## Purpose
 
@@ -37,12 +37,14 @@ Navigation is organized around customer journeys (buy, sell, invest, rent, learn
 1. Home
 2. Buy
 3. Sell
-4. Services
-5. Resources
+4. Rent
+5. Manage & Invest
 6. About
 7. Contact
 
 No other items may be added to this row. If a new top-level need arises, it goes inside an existing mega menu first; only add an 8th primary item as a last resort and only by revising this document deliberately.
+
+**Changed 2026-07-31** (v1.2) — see Revision History for the full rationale: Rentals was promoted from a sub-item of "Services" to its own top-level mega menu ("Rent"), matching Buy/Sell as a true peer rather than a nested service. "Services" was renamed "Manage & Invest" to actually name what it contains (Property Management, Investors) instead of a generic label. To hold the 7-item ceiling, the standalone "Resources" mega menu was folded into "About" as a single item — audience-specific resources (Buyer/Seller/Renter Resources) already live inside their own mega menus, so the general resource hub didn't need its own top-level slot.
 
 ## Mega Menus
 
@@ -64,26 +66,26 @@ Desktop: large panels, not long dropdown lists. No nested fly-out menus (one lev
 - Seller Resources
 - Success Stories
 
-### Services
+### Rent
+- Search Rentals
+- Leasing Process
+- Pet-Friendly Homes
+- Renter Resources
+- Homeownership Path
+- Resident Portal
+
+### Manage & Invest
 - Property Management
-- Rentals
 - Investors
 - Homeowner Services
 - Commercial *(future placeholder — shown, not yet linked)*
-
-### Resources
-- Learning Center
-- Blog
-- Guides & Downloads
-- Calculators
-- FAQ
-- Market Reports
 
 ### About
 - Joshua Alvelo
 - Meet the Team
 - Built in the 757
 - Testimonials
+- Resources *(links to the general Learning Center/Blog/Guides/Calculators/FAQ/Market Reports hub — those live as sections on that page, not as separate top-level nav items)*
 - Careers *(future placeholder — shown, not yet linked)*
 
 ### Contact (single page, no mega menu)
@@ -130,14 +132,14 @@ The prior 12-item flat nav (`CLAUDE.md` §7's original list) mapped page-for-pag
 |---|---|
 | Buyers | Buy mega menu |
 | Sellers | Sell mega menu |
-| Property Wealth Management™ | Services → Property Management |
-| Rentals | Services → Rentals |
-| Build Wealth | Services → Investors |
+| Property Wealth Management™ | Manage & Invest → Property Management |
+| Rentals | Rent mega menu (own top-level item as of v1.2) |
+| Build Wealth | Manage & Invest → Investors |
 | Concierge Services | Sell → Concierge Services |
-| Knowledge Center™ | Resources → Learning Center |
+| Knowledge Center™ | About → Resources |
 | Communities | Buy → Communities |
 | Built in the 757™ | About → Built in the 757 |
-| Resources | Resources mega menu (expanded) |
+| Resources | About → Resources (folded in as of v1.2) |
 | About | About mega menu |
 | Contact | Contact (unchanged) |
 
@@ -147,3 +149,4 @@ The prior 12-item flat nav (`CLAUDE.md` §7's original list) mapped page-for-pag
 |---|---|---|
 | 1.0 | 2026-07-30 | Initial navigation architecture — supersedes the flat 12-item nav from 2026-07-28. |
 | 1.1 | 2026-07-30 | Dropped transparent-over-hero — header is solid white at all times. Fixed a real bug in the first build where the mega menu could stay visibly open far longer than intended (it was rendered in normal document flow and its hover-close boundary was too broad); it's now an absolutely-positioned overlay tied to the nav row only. |
+| 1.2 | 2026-07-31 | Joshua flagged that Rentals, Property Management, and Investors weren't getting the visibility Buy/Sell get, despite being major platform pillars (PropertyOS™/InvestorOS™). Promoted Rentals to its own top-level "Rent" mega menu (peer to Buy/Sell). Renamed "Services" to "Manage & Invest" so the label actually names what it contains, and reordered so Property Management leads it. To hold the 7-item ceiling, the standalone "Resources" mega menu was folded into "About" as a single item — Buy/Sell/Rent already carry their own audience-specific resource links, so the general hub page didn't need a dedicated top-level slot. |

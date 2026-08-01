@@ -15,9 +15,15 @@ const SELL_LINKS = [
   { label: "Success Stories", href: "/sell/success-stories" },
 ];
 
-const SERVICES_LINKS = [
+const RENT_LINKS = [
+  { label: "Search Rentals", href: "/rentals" },
+  { label: "Leasing Process", href: "/rentals/leasing-process" },
+  { label: "Pet-Friendly Homes", href: "/rentals/pet-friendly" },
+  { label: "Renter Resources", href: "/rentals/resources" },
+];
+
+const MANAGE_INVEST_LINKS = [
   { label: "Property Management", href: "/services/property-management" },
-  { label: "Rentals", href: "/rentals" },
   { label: "Investors", href: "/services/investors" },
   { label: "Homeowner Services", href: "/services/homeowner-services" },
 ];
@@ -26,10 +32,11 @@ export function SiteFooter() {
   return (
     <footer className="bg-(--color-navy-exploratory) text-white">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
           <FooterColumn title="Buy" links={BUY_LINKS} />
           <FooterColumn title="Sell" links={SELL_LINKS} />
-          <FooterColumn title="Services" links={SERVICES_LINKS} />
+          <FooterColumn title="Rent" links={RENT_LINKS} />
+          <FooterColumn title="Manage & Invest" links={MANAGE_INVEST_LINKS} />
           <div>
             <p className="text-sm font-semibold uppercase">Contact</p>
             <ul className="mt-4 space-y-2 text-sm text-white/80">
