@@ -100,6 +100,15 @@ Trusted-partner logos for this page reuse the same real companies as the Buy pag
 | 84 | Real-Time Insights | Owner Portal dashboard preview — UI mockup, not a real property's data | 900×1600px | 9:16 (portrait/phone) | Deliberately not built with hardcoded income/occupancy figures — see revision note below |
 | 85 | Final CTA | Joshua reviewing the Owner Portal with property owners | 2400×900px | ~8:3 (wide banner) | |
 
+## Rentals page (`apps/web/app/rentals/page.tsx`) — built 2026-07-31
+
+| # | Section | What it is | Recommended size | Aspect | Notes |
+|---|---|---|---|---|---|
+| 86 | Hero | Family moving into their new rental home | 2400×1150px | 21:9 (wide) | Same treatment as other page heroes |
+| 87–93 | The Leasing Process™ (×7) | One photo per step — browsing, showing, application, review, signing, orientation, welcome | 1200×675px each | 16:9 | See step labels in the page code for exact framing per step |
+| 94 | Pet-Friendly Living | Dog in a pet-friendly rental home | 1200×675px | 16:9 | |
+| 95 | Final CTA | Family unpacking boxes in their new rental home | 2400×900px | ~8:3 (wide banner) | |
+
 ## Revision History
 
 | Date | Summary |
@@ -110,3 +119,4 @@ Trusted-partner logos for this page reuse the same real companies as the Buy pag
 | 2026-07-30 | Added About page placeholders (#31–52). |
 | 2026-07-31 | Added Sell page placeholders (#53–63). The reference mockup for this page showed a "Home Value Report" widget with a specific fake address and dollar figures, and four "SOLD" cards with specific fake addresses, sale prices, and days-on-market — neither was reproduced with those specifics. Presenting fabricated transaction results as real is a compliance risk for a licensed brokerage, not just a content-accuracy one. The value-report slot (#61) is a UI placeholder instead of a hardcoded example, and the sold-listings section is an honest empty state pending real MLS/CRM data, same pattern as the Buy page's Featured Homes section. |
 | 2026-07-31 | Added Property Management page placeholders (#64–85). Same treatment applied to two mockup elements: the "Owner Portal dashboard" preview (#84) showed specific occupancy/income/cash-flow figures — built as a labeled UI-preview placeholder, not hardcoded numbers; four "success story" cards with specific rent-increase and vacancy-reduction figures were built as an honest empty state instead (see the page's Success Stories section) pending real performance data. The mockup also used a gold/amber accent color throughout (step numbers, icons, a "Blueprint" badge) that isn't part of the approved brand palette (CLAUDE.md §12.1) — built using the existing navy/primary-blue/secondary-blue palette instead, same call made on the Buy page's icon badges. Flagged for Joshua, not decided unilaterally. |
+| 2026-07-31 | Added Rentals page placeholders (#86–95). The mockup's search band (city/zip/price/beds/baths/property type, pet-friendly and available-now filters) was built as real form UI without a results grid — no MLS/IDX integration exists yet (see docs/api-integrations.md), so it's an honest "search UI, no live inventory" state rather than fabricated listings, consistent with the Buy page's Featured Homes section. |

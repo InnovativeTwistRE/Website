@@ -322,3 +322,70 @@ export function CalculatorIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function CreditCardIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <rect x="3" y="6" width="18" height="13" rx="1.5" />
+      <path d="M3 10h18" />
+      <path d="M6 14.5h4" />
+    </svg>
+  );
+}
+
+export function RepeatIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M4 12a8 8 0 0 1 13.5-5.5L20 9" />
+      <path d="M20 4v5h-5" />
+      <path d="M20 12a8 8 0 0 1-13.5 5.5L4 15" />
+      <path d="M4 20v-5h5" />
+    </svg>
+  );
+}
+
+export function SmartphoneIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <rect x="7" y="2.5" width="10" height="19" rx="2" />
+      <path d="M11 18.5h2" />
+    </svg>
+  );
+}
+
+export function CheckIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M4 12.5 9 18 20 6" />
+    </svg>
+  );
+}
+
+export function PiggyBankIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M5 12.5a6 6 0 0 1 6-6h4a5 5 0 0 1 5 4.5l1.5 1-1.5 1v1.5a1.5 1.5 0 0 1-1.5 1.5h-1v2h-3v-2H9.5a4.5 4.5 0 0 1-4.5-4.5Z" />
+      <circle cx="15.5" cy="11" r="0.75" />
+      <path d="M8 6.5V4.5" />
+    </svg>
+  );
+}
+
+export function PawIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <circle cx="7" cy="8" r="1.6" />
+      <circle cx="12" cy="6" r="1.6" />
+      <circle cx="17" cy="8" r="1.6" />
+      <path d="M12 12c-3 0-5.5 2-5.5 4.5A2.5 2.5 0 0 0 9 19c1-.5 2-.8 3-.8s2 .3 3 .8a2.5 2.5 0 0 0 2.5-2.5C17.5 14 15 12 12 12Z" />
+    </svg>
+  );
+}
+
+export function PhoneIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M5 4h3l2 5-2 1a11 11 0 0 0 5 5l1-2 5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" />
+    </svg>
+  );
+}
