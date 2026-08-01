@@ -86,6 +86,20 @@ Trusted-partner logos for this page reuse the same real companies as the Buy pag
 | 62 | Client Success Stories | Client story — video testimonial | 1200×675px | 16:9 | Placeholder — real testimonials come later, same as #49–51 |
 | 63 | Final CTA | Joshua with sellers celebrating outside their home | 2400×900px | ~8:3 (wide banner) | |
 
+## Property Management page (`apps/web/app/services/property-management/page.tsx`) — built 2026-07-31
+
+| # | Section | What it is | Recommended size | Aspect | Notes |
+|---|---|---|---|---|---|
+| 64 | Hero | Rental property at twilight | 2400×1150px | 21:9 (wide) | Same treatment as other page heroes |
+| 65 | Welcome | Rental property exterior at twilight | 800×800px | 1:1 (square) | |
+| 66 | Welcome | Meeting with a property owner | 800×800px | 1:1 (square) | |
+| 67 | Welcome | Owner Portal — reviewing performance on a tablet | 800×800px | 1:1 (square) | |
+| 68 | Welcome | Inspecting property condition | 800×800px | 1:1 (square) | |
+| 69–75 | Property Wealth Blueprint™ (×7) | One photo per step — consultation, prep, marketing, lease signing, inspection, reporting, growth | 1200×675px each | 16:9 | See step labels in the page code for exact framing per step |
+| 76–83 | Everything Your Investment Needs (×8) | One photo per feature card — marketing, placement, maintenance, inspections, reporting, support team, resident success (×2) | 1200×675px each | 16:9 | |
+| 84 | Real-Time Insights | Owner Portal dashboard preview — UI mockup, not a real property's data | 900×1600px | 9:16 (portrait/phone) | Deliberately not built with hardcoded income/occupancy figures — see revision note below |
+| 85 | Final CTA | Joshua reviewing the Owner Portal with property owners | 2400×900px | ~8:3 (wide banner) | |
+
 ## Revision History
 
 | Date | Summary |
@@ -95,3 +109,4 @@ Trusted-partner logos for this page reuse the same real companies as the Buy pag
 | 2026-07-30 | Added Buy page placeholders (#16–30). Items #24–26 need real partner names in addition to logo files — confirmed real vendor relationships (mortgage, closing attorneys, inspections), not placeholder concepts like the rest of this list. |
 | 2026-07-30 | Added About page placeholders (#31–52). |
 | 2026-07-31 | Added Sell page placeholders (#53–63). The reference mockup for this page showed a "Home Value Report" widget with a specific fake address and dollar figures, and four "SOLD" cards with specific fake addresses, sale prices, and days-on-market — neither was reproduced with those specifics. Presenting fabricated transaction results as real is a compliance risk for a licensed brokerage, not just a content-accuracy one. The value-report slot (#61) is a UI placeholder instead of a hardcoded example, and the sold-listings section is an honest empty state pending real MLS/CRM data, same pattern as the Buy page's Featured Homes section. |
+| 2026-07-31 | Added Property Management page placeholders (#64–85). Same treatment applied to two mockup elements: the "Owner Portal dashboard" preview (#84) showed specific occupancy/income/cash-flow figures — built as a labeled UI-preview placeholder, not hardcoded numbers; four "success story" cards with specific rent-increase and vacancy-reduction figures were built as an honest empty state instead (see the page's Success Stories section) pending real performance data. The mockup also used a gold/amber accent color throughout (step numbers, icons, a "Blueprint" badge) that isn't part of the approved brand palette (CLAUDE.md §12.1) — built using the existing navy/primary-blue/secondary-blue palette instead, same call made on the Buy page's icon badges. Flagged for Joshua, not decided unilaterally. |

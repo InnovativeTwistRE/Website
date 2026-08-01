@@ -283,3 +283,42 @@ export function TargetIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function TrendDownIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M4 7 10 13 14 10 20 16" />
+      <path d="M20 10v6h-6" />
+    </svg>
+  );
+}
+
+export function HeadsetIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M4 13v-1a8 8 0 0 1 16 0v1" />
+      <rect x="3" y="13" width="4" height="6" rx="1.5" />
+      <rect x="17" y="13" width="4" height="6" rx="1.5" />
+      <path d="M20 19v1a2 2 0 0 1-2 2h-3" />
+    </svg>
+  );
+}
+
+export function MonitorIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <rect x="3" y="4" width="18" height="12" rx="1.5" />
+      <path d="M8 20h8M12 16v4" />
+    </svg>
+  );
+}
+
+export function CalculatorIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <rect x="5" y="3" width="14" height="18" rx="1.5" />
+      <path d="M8 7h8" />
+      <path d="M8 11h.01M11.5 11h.01M15 11h.01M8 14.5h.01M11.5 14.5h.01M15 14.5h.01M8 18h.01M11.5 18h.01M15 18h.01" />
+    </svg>
+  );
+}
