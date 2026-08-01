@@ -129,7 +129,7 @@ export default function Home() {
             {OPPORTUNITIES.map((item) => (
               <Link key={item.href} href={item.href} className="group text-left">
                 <PlaceholderImage label={item.image} aspect="square" />
-                <p className="mt-2 text-sm font-semibold text-(--color-neutral-900) group-hover:text-(--color-primary-blue)">
+                <p className="mt-2 text-sm font-semibold text-(--color-neutral-900) group-hover:text-(--color-secondary-blue)">
                   {item.label} →
                 </p>
               </Link>
@@ -244,7 +244,7 @@ export default function Home() {
                 key={node.label}
                 className="rounded-md border border-(--color-light-grey) bg-white p-4"
               >
-                <p className="text-sm font-semibold text-(--color-primary-blue)">{node.label}</p>
+                <p className="text-sm font-semibold text-(--color-secondary-blue)">{node.label}</p>
                 <p className="mt-1 text-xs text-(--color-neutral-500)">{node.body}</p>
               </div>
             ))}
@@ -349,7 +349,7 @@ function ListingsEmptyState({
     <div>
       <div className="flex items-baseline justify-between">
         <h3 className="text-xl font-bold text-(--color-neutral-900)">{eyebrow}</h3>
-        <Link href={cta.href} className="text-sm text-(--color-primary-blue)">
+        <Link href={cta.href} className="text-sm text-(--color-secondary-blue)">
           {cta.label} →
         </Link>
       </div>

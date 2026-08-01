@@ -58,7 +58,7 @@ export function SiteHeader() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-sm font-medium text-(--color-neutral-900) hover:text-(--color-primary-blue)"
+                  className="text-sm font-medium text-(--color-neutral-900) hover:text-(--color-secondary-blue)"
                 >
                   {item.label}
                 </Link>
@@ -70,7 +70,7 @@ export function SiteHeader() {
                 <div key={item.label} className="relative" onMouseLeave={() => setOpenMenu(null)}>
                   <Link
                     href={item.href}
-                    className="text-sm font-medium text-(--color-neutral-900) hover:text-(--color-primary-blue)"
+                    className="text-sm font-medium text-(--color-neutral-900) hover:text-(--color-secondary-blue)"
                     aria-expanded={openMenu === item.label}
                     onMouseEnter={() => setOpenMenu(item.label)}
                     onFocus={() => setOpenMenu(item.label)}

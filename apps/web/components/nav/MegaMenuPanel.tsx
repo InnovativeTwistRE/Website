@@ -24,7 +24,7 @@ export function MegaMenuPanel({ item }: { item: PrimaryNavMega }) {
           <Link
             key={entry.label}
             href={entry.href ?? "#"}
-            className="text-sm font-medium text-(--color-neutral-900) hover:text-(--color-primary-blue)"
+            className="text-sm font-medium text-(--color-neutral-900) hover:text-(--color-secondary-blue)"
           >
             {entry.label}
           </Link>

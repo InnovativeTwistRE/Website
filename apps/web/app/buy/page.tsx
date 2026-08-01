@@ -244,7 +244,7 @@ export default function BuyPage() {
               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-(--color-primary-blue)/10 text-(--color-primary-blue)">
                 <segment.icon className="h-5 w-5" />
               </span>
-              <p className="mt-3 text-sm font-semibold text-(--color-neutral-900) group-hover:text-(--color-primary-blue)">
+              <p className="mt-3 text-sm font-semibold text-(--color-neutral-900) group-hover:text-(--color-secondary-blue)">
                 {segment.label}
               </p>
               <p className="mt-1 text-xs text-(--color-neutral-500)">{segment.body}</p>
@@ -337,7 +337,7 @@ export default function BuyPage() {
                   label={`${community.name} — skyline or streetscape`}
                   aspect="portrait"
                 />
-                <p className="mt-2 text-sm font-semibold text-(--color-neutral-900) group-hover:text-(--color-primary-blue)">
+                <p className="mt-2 text-sm font-semibold text-(--color-neutral-900) group-hover:text-(--color-secondary-blue)">
                   {community.name}
                 </p>
                 <p className="mt-1 text-xs text-(--color-neutral-500)">{community.body}</p>
@@ -351,7 +351,7 @@ export default function BuyPage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="flex items-baseline justify-between">
           <h2 className="text-2xl font-bold text-(--color-neutral-900)">Featured Homes</h2>
-          <Link href="/search" className="text-sm text-(--color-primary-blue)">
+          <Link href="/search" className="text-sm text-(--color-secondary-blue)">
             View All Homes →
           </Link>
         </div>
@@ -377,7 +377,7 @@ export default function BuyPage() {
                 <Link
                   key={resource.href}
                   href={resource.href}
-                  className="rounded-md border border-(--color-light-grey) p-3 text-xs font-medium text-(--color-neutral-900) hover:border-(--color-primary-blue) hover:text-(--color-primary-blue)"
+                  className="rounded-md border border-(--color-light-grey) p-3 text-xs font-medium text-(--color-neutral-900) hover:border-(--color-primary-blue) hover:text-(--color-secondary-blue)"
                 >
                   <resource.icon className="h-4 w-4 text-(--color-primary-blue)" />
                   <span className="mt-2 block">{resource.label}</span>
@@ -466,7 +466,7 @@ export default function BuyPage() {
           <h2 className="text-2xl font-bold text-(--color-neutral-900)">
             Frequently Asked Questions
           </h2>
-          <Link href="/resources/faq" className="text-sm text-(--color-primary-blue)">
+          <Link href="/resources/faq" className="text-sm text-(--color-secondary-blue)">
             View All FAQs →
           </Link>
         </div>

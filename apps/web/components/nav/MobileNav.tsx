@@ -73,7 +73,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
                       <Link
                         href={item.href}
                         onClick={onClose}
-                        className="text-sm font-medium text-(--color-primary-blue)"
+                        className="text-sm font-medium text-(--color-secondary-blue)"
                       >
                         View all {item.label} →
                       </Link>
