@@ -13,14 +13,6 @@ import {
   WrenchIcon,
   SofaIcon,
   DiamondIcon,
-  SearchIcon,
-  ClipboardIcon,
-  HomeIcon,
-  RocketIcon,
-  EyeIcon,
-  HandshakeIcon,
-  KeyIcon,
-  HeartIcon,
 } from "../../components/icons";
 
 export const metadata: Metadata = {
@@ -110,17 +102,6 @@ const PREP_ITEMS = [
     body: "Professional cleaning, staging, photography, and marketing designed for an unforgettable first impression.",
     icon: DiamondIcon,
   },
-];
-
-const SELLING_JOURNEY = [
-  { title: "Discover", icon: SearchIcon },
-  { title: "Strategize", icon: ClipboardIcon },
-  { title: "Prepare", icon: HomeIcon },
-  { title: "Launch", icon: RocketIcon },
-  { title: "Show", icon: EyeIcon },
-  { title: "Negotiate", icon: HandshakeIcon },
-  { title: "Close", icon: KeyIcon },
-  { title: "Celebrate", icon: HeartIcon },
 ];
 
 const SELLER_RESOURCES = [
@@ -289,31 +270,6 @@ export default function SellPage() {
               aspect="wide"
               className="mt-4"
             />
-          </div>
-        </div>
-      </section>
-
-      {/* Your selling journey */}
-      <section className="bg-(--color-light-grey)/30 py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <Eyebrow>Your Selling Journey</Eyebrow>
-          </div>
-          <div className="relative mt-10 grid grid-cols-4 gap-y-8 sm:grid-cols-8">
-            <div
-              className="absolute top-5 right-0 left-0 hidden border-t border-dashed border-(--color-light-grey) sm:block"
-              aria-hidden="true"
-            />
-            {SELLING_JOURNEY.map((item) => (
-              <div key={item.title} className="relative text-center">
-                <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full border-2 border-(--color-secondary-blue) bg-(--color-light-grey)/30 text-(--color-secondary-blue)">
-                  <item.icon className="h-5 w-5" />
-                </div>
-                <p className="mt-3 text-xs font-semibold text-(--color-neutral-900)">
-                  {item.title}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
